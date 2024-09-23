@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 
 const App = () => {
   return (
-    <main>
+    <main className="font-nunito">
       <Navbar />
       <RouterProvider router={router} />
       <Footer />
