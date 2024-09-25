@@ -3,6 +3,13 @@ export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       borderRadius: {
         lg: "var(--radius)",
@@ -50,7 +57,7 @@ export default {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
-        "blue-light": "hsl(var(--blue-light))",
+        "blue-light": "#8FB2F5",
         gray: {
           100: "#FAFAFA",
           200: "#BFBFD4",
@@ -77,6 +84,23 @@ export default {
       },
       fontFamily: {
         nunito: ["Nunito"],
+      },
+      backgroundImage: {
+        "default-day": "url('src/assets/img/bg-default-day.svg')",
+        "default-night": "url('src/assets/img/bg-default-night.svg')",
+        "clear-day": "url('src/assets/img/bg-clear-day.svg')",
+        "clear-night": "url('src/assets/img/bg-clear-night.svg')",
+        "clouds-day": "url('src/assets/img/bg-clouds-day.svg')",
+        "clouds-night": "url('src/assets/img/bg-clouds-night.svg')",
+        "rain-day": "url('src/assets/img/bg-rain-day.svg')",
+        "rain-night": "url('src/assets/img/bg-rain-night.svg')",
+        "snow-day": "url('src/assets/img/bg-snow-day.svg')",
+        "snow-night": "url('src/assets/img/bg-snow-night.svg')",
+        "storm-day": "url('src/assets/img/bg-storm-day.svg')",
+        "storm-night": "url('src/assets/img/bg-storm-night.svg')",
+      },
+      animation: {
+        "spin-slow": "spin 2s linear infinite",
       },
     },
   },
