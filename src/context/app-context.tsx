@@ -3,6 +3,8 @@ import * as React from "react";
 interface AppContextType {
   location: string;
   setLocation: (location: string) => void;
+  units: string;
+  setUnits: (units: string) => void;
 }
 
 const AppContext = React.createContext<AppContextType | undefined>(undefined);
@@ -24,10 +26,16 @@ export default function AppProvider({
     const params = new URLSearchParams(window.location.search);
     return params.get("q") || "";
   });
+  const [units, setUnits] = React.useState<string>(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("units") || "metric";
+  });
 
   const AppContextValue: AppContextType = {
     location,
+    units,
     setLocation,
+    setUnits,
   };
 
   return (
