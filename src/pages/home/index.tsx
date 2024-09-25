@@ -18,14 +18,15 @@ import {
   Spinner,
   SearchForm,
   ErrorDisplay,
+  SwitchMode,
 } from "@/components";
 import { useAppContext } from "@/context/app-context";
 
 export const Home = () => {
   const currentTime = useClock();
-  const { location } = useAppContext();
+  const { location, units } = useAppContext();
   const { data, weatherToday, weatherIn5Day, isLoading, isError, error } =
-    useWeather(location);
+    useWeather();
 
   return (
     <section
@@ -75,12 +76,15 @@ export const Home = () => {
                   <WeatherCardBody>
                     <WeatherCardDetail>
                       <WeatherCardTemp>
-                        {Math.round(weatherToday.main.temp)}&deg;c
+                        {Math.round(weatherToday.main.temp)}°
+                        {units === "metric" ? "c" : "f"}
                       </WeatherCardTemp>
                       <div className="flex items-center gap-3">
                         <p className="text-heading-md">
-                          {Math.round(weatherToday.main.temp_max)}&deg;c /{" "}
-                          {Math.round(weatherToday.main.temp_min)}&deg;c
+                          {Math.round(weatherToday.main.temp_max)}°
+                          {units === "metric" ? "c" : "f"} /{" "}
+                          {Math.round(weatherToday.main.temp_min)}°
+                          {units === "metric" ? "c" : "f"}
                         </p>
                         <span className="h-2 w-2 rounded-full bg-white/30 inline-block"></span>
                         <p className="text-lg">
@@ -99,7 +103,12 @@ export const Home = () => {
 
             <div className="h-[calc(100vh_-_5rem)] flex flex-col gap-4">
               <div className="bg-gray-800 h-[60%] p-5 rounded-xl overflow-hidden">
-                <p className="text-md text-gray-400">Today's weather details</p>
+                <div className="flex justify-between items-center">
+                  <p className="text-md text-gray-400">
+                    Today's weather details
+                  </p>
+                  <SwitchMode />
+                </div>
 
                 {isLoading && <Spinner />}
                 {isError && <ErrorDisplay message={error?.message} />}
@@ -109,7 +118,9 @@ export const Home = () => {
                     <>
                       <WeatherDetails
                         type="temperature"
-                        value={`${Math.round(weatherToday.main.feels_like)}°C`}
+                        value={`${Math.round(weatherToday.main.feels_like)}°${
+                          units === "metric" ? "c" : "f"
+                        }`}
                       />
                       <WeatherDetails
                         type="rain"

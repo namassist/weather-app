@@ -4,14 +4,19 @@ export const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_URL,
   params: {
     appid: import.meta.env.VITE_APP_API_KEY,
-    units: "metric",
   },
 });
 
-export const getForecastWeatherByCity = async (cityName: string) => {
+export const getForecastWeatherByCity = async (
+  cityName: string,
+  units: string
+) => {
   try {
     const response = await axiosInstance.get("/forecast", {
-      params: { q: cityName },
+      params: {
+        q: cityName,
+        units: units,
+      },
     });
 
     if (response.data.cod !== "200") {
