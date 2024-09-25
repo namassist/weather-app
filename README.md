@@ -250,6 +250,3 @@ Check the terminal output for confirmation that the server is running correctly 
 - [Yarn Documentation](https://classic.yarnpkg.com/en/docs/)
 - [Git Documentation](https://git-scm.com/doc)
 
-```
-
-```
