@@ -41,9 +41,9 @@ export const Home = () => {
           <EmptyLocation />
         ) : (
           <div className="w-full h-full overflow-hidden grid grid-cols-1 space-y-4 lg:grid-cols-2 lg:space-x-6 lg:space-y-0">
-            <div className="bg-gray-800 p-5 h-[calc(100vh_-_5rem)] rounded-lg flex flex-col gap-4">
-              <div className="flex gap-4">
-                <div className="bg-gray-600 w-12 h-12 flex justify-center items-center rounded-lg">
+            <div className="bg-gray-800 p-3 sm:p-5 h-[60vh] lg:h-[calc(100vh_-_5rem)] rounded-lg flex flex-col gap-4">
+              <div className="flex flex-col sm:flex-wrap gap-4">
+                <div className="bg-gray-600 w-12 h-12 sm:flex justify-center items-center rounded-lg hidden">
                   <img
                     src={BrandLogo}
                     alt="brand logo of app"
@@ -65,28 +65,29 @@ export const Home = () => {
                 >
                   <WeatherCardHeader>
                     <WeatherCardLocation>
-                      <h4 className="text-heading-md">
+                      <h4 className="text-heading-md text-center sm:text-left">
                         {data?.city.name}, {data?.city.country}
                       </h4>
-                      <p className="text-md">{getToday(new Date())}</p>
+                      <p className="text-md text-center sm:text-left">
+                        {getToday(new Date())}
+                      </p>
                     </WeatherCardLocation>
                     <WeatherCardTime>{currentTime}</WeatherCardTime>
                   </WeatherCardHeader>
-
                   <WeatherCardBody>
                     <WeatherCardDetail>
                       <WeatherCardTemp>
                         {Math.round(weatherToday.main.temp)}°
                         {units === "metric" ? "c" : "f"}
                       </WeatherCardTemp>
-                      <div className="flex items-center gap-3">
-                        <p className="text-heading-md">
+                      <div className="flex flex-col-reverse sm:flex-row items-center gap-3">
+                        <p className="text-heading-md text-center sm:text-left">
                           {Math.round(weatherToday.main.temp_max)}°
                           {units === "metric" ? "c" : "f"} /{" "}
                           {Math.round(weatherToday.main.temp_min)}°
                           {units === "metric" ? "c" : "f"}
                         </p>
-                        <span className="h-2 w-2 rounded-full bg-white/30 inline-block"></span>
+                        <span className="h-2 w-2 rounded-full bg-white/30 sm:inline-block hidden"></span>
                         <p className="text-lg">
                           {weatherToday.weather[0].main}
                         </p>
@@ -101,8 +102,8 @@ export const Home = () => {
               )}
             </div>
 
-            <div className="h-[calc(100vh_-_5rem)] flex flex-col gap-4">
-              <div className="bg-gray-800 h-[60%] p-5 rounded-xl overflow-hidden">
+            <div className="h-auto lg:h-[calc(100vh_-_5rem)] flex flex-col gap-4">
+              <div className="bg-gray-800 h-auto lg:h-[60%] p-5 rounded-xl overflow-hidden">
                 <div className="flex justify-between items-center">
                   <p className="text-md text-gray-400">
                     Today's weather details
@@ -143,13 +144,13 @@ export const Home = () => {
                   )}
                 </div>
               </div>
-              <div className="bg-gray-800 p-5 h-[40%] rounded-xl">
+              <div className="bg-gray-800 p-5 h-auto lg:h-[40%] rounded-xl">
                 <p className="text-md text-gray-400">Forecast for 5 days</p>
 
                 {isLoading && <Spinner />}
                 {isError && <ErrorDisplay message={error?.message} />}
 
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-2 mt-5 xl:mt-8">
+                <div className="grid sm:grid-cols-3 lg:grid-cols-5 mt-6 gap-6 space-y-4 lg:space-y-0 lg:gap-2 xl:mt-8">
                   {weatherIn5Day.map((weather) => (
                     <WeatherForecasts key={weather.day} data={weather} />
                   ))}

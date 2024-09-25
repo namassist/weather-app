@@ -16,7 +16,10 @@ export const SwitchMode = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button size="icon" className="h-auto border border-input">
+        <Button
+          size="icon"
+          className="h-auto border border-gray-400 animate-pulse"
+        >
           {units === "metric" ? (
             <WiCelsius className="h-6 w-6" />
           ) : (

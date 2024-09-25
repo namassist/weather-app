@@ -49,7 +49,11 @@ const WeatherCardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={`flex justify-between ${className}`} {...props} />
+  <div
+    ref={ref}
+    className={`flex flex-col-reverse items-center space-y-2 sm:space-y-2 sm:flex-row sm:justify-between ${className}`}
+    {...props}
+  />
 ));
 WeatherCardHeader.displayName = "WeatherCardHeader";
 
@@ -75,7 +79,7 @@ const WeatherCardBody = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={`flex justify-between items-center ${className}`}
+    className={`flex flex-col-reverse sm:flex-row sm:justify-between items-center ${className}`}
     {...props}
   />
 ));
@@ -87,7 +91,7 @@ const WeatherCardTemp = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h4
     ref={ref}
-    className={`text-heading-hg text-white ${className}`}
+    className={`text-heading-xl sm:text-heading-hg text-white text-center sm:text-left ${className}`}
     {...props}
   />
 ));
