@@ -12,7 +12,7 @@ This guide will walk you through setting up the necessary tools and running the 
   - **TanStack Query**: For data fetching and state management
   - **Tailwind CSS**: For styling
   - **TypeScript**: For type safety
-  - **React Testing Library**: For testing React components
+  - **Vitest**: For testing React components
 
 ---
 
@@ -249,4 +249,3 @@ Check the terminal output for confirmation that the server is running correctly 
 - [npm Documentation](https://docs.npmjs.com/)
 - [Yarn Documentation](https://classic.yarnpkg.com/en/docs/)
 - [Git Documentation](https://git-scm.com/doc)
-
