@@ -42,7 +42,7 @@ export const Home = () => {
         ) : (
           <div className="w-full h-full overflow-hidden grid grid-cols-1 space-y-4 lg:grid-cols-2 lg:space-x-6 lg:space-y-0">
             <div className="bg-gray-800 p-3 sm:p-5 h-[60vh] lg:h-[calc(100vh_-_5rem)] rounded-lg flex flex-col gap-4">
-              <div className="flex flex-col sm:flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <div className="bg-gray-600 w-12 h-12 sm:flex justify-center items-center rounded-lg hidden">
                   <img
                     src={BrandLogo}
