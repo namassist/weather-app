@@ -2,9 +2,9 @@ import * as React from "react";
 
 interface AppContextType {
   location: string;
-  setLocation: (location: string) => void;
+  setLocation: React.Dispatch<React.SetStateAction<string>>;
   units: string;
-  setUnits: (units: string) => void;
+  setUnits: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const AppContext = React.createContext<AppContextType | undefined>(undefined);
@@ -28,7 +28,10 @@ export default function AppProvider({
   });
   const [units, setUnits] = React.useState<string>(() => {
     const params = new URLSearchParams(window.location.search);
-    return params.get("units") || "metric";
+    const validUnits = ["metric", "imperial"];
+    const urlUnits = params.get("units");
+
+    return validUnits.includes(urlUnits || "") ? urlUnits! : "metric";
   });
 
   const AppContextValue: AppContextType = {

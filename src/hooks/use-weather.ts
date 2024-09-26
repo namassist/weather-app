@@ -22,7 +22,7 @@ export const useWeather = () => {
   }, [location, units, refetch]);
 
   const handleUnitToggle = (newUnits: string) => {
-    setUnits((prevUnits) => {
+    setUnits((prevUnits: string) => {
       if (prevUnits !== newUnits) {
         const params = new URLSearchParams(window.location.search);
         params.set("units", newUnits);
