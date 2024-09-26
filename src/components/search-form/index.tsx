@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const SearchForm: React.FC = () => {
   const navigate = useNavigate();
   const { location, setLocation } = useAppContext();
-  const [inputValue, setInputValue] = React.useState(location);
+  const [inputValue, setInputValue] = React.useState<string>(location || "");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
