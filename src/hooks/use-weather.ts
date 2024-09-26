@@ -16,9 +16,8 @@ export const useWeather = () => {
   React.useEffect(() => {
     if (location) {
       console.log("Searching weather for:", location);
+      refetch();
     }
-
-    refetch();
   }, [location, units, refetch]);
 
   const handleUnitToggle = (newUnits: string) => {

@@ -9,17 +9,17 @@ const weatherCardVariants = cva(
   {
     variants: {
       variant: {
-        "clear-day": "bg-clear-day",
-        "clear-night": "bg-clear-night",
-        "clouds-day": "bg-clouds-day",
-        "clouds-night": "bg-clouds-night",
-        "rain-day": "bg-rain-day",
-        "rain-night": "bg-rain-night",
-        "snow-day": "bg-snow-day",
-        "snow-night": "bg-snow-night",
-        "thunderstorm-day": "bg-storm-day",
-        "thunderstorm-night": "bg-storm-night",
-        default: "bg-default-day",
+        "clear-day": "bg-[url('assets/img/bg-clear-day.svg')]",
+        "clear-night": "bg-[url('assets/img/bg-clear-night.svg')]",
+        "clouds-day": "bg-[url('assets/img/bg-clouds-day.svg')]",
+        "clouds-night": "bg-[url('assets/img/bg-clouds-night.svg')]",
+        "rain-day": "bg-[url('assets/img/bg-rain-day.svg')]",
+        "rain-night": "bg-[url('assets/img/bg-rain-night.svg')]",
+        "snow-day": "bg-[url('assets/img/bg-snow-day.svg')]",
+        "snow-night": "bg-[url('assets/img/bg-snow-night.svg')]",
+        "thunderstorm-day": "bg-[url('assets/img/bg-storm-day.svg')]",
+        "thunderstorm-night": "bg-[url('assets/img/bg-storm-night.svg')]",
+        default: "bg-[url('assets/img/bg-default-day.svg')]",
       },
     },
     defaultVariants: {

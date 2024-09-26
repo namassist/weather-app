@@ -85,20 +85,6 @@ export default {
       fontFamily: {
         nunito: ["Nunito"],
       },
-      backgroundImage: {
-        "default-day": "url('src/assets/img/bg-default-day.svg')",
-        "default-night": "url('src/assets/img/bg-default-night.svg')",
-        "clear-day": "url('src/assets/img/bg-clear-day.svg')",
-        "clear-night": "url('src/assets/img/bg-clear-night.svg')",
-        "clouds-day": "url('src/assets/img/bg-clouds-day.svg')",
-        "clouds-night": "url('src/assets/img/bg-clouds-night.svg')",
-        "rain-day": "url('src/assets/img/bg-rain-day.svg')",
-        "rain-night": "url('src/assets/img/bg-rain-night.svg')",
-        "snow-day": "url('src/assets/img/bg-snow-day.svg')",
-        "snow-night": "url('src/assets/img/bg-snow-night.svg')",
-        "storm-day": "url('src/assets/img/bg-storm-day.svg')",
-        "storm-night": "url('src/assets/img/bg-storm-night.svg')",
-      },
       animation: {
         "spin-slow": "spin 2s linear infinite",
       },

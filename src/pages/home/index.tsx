@@ -30,7 +30,7 @@ export const Home = () => {
 
   return (
     <section
-      className={`h-auto lg:h-screen overflow-hidden py-10 ${
+      className={`min-h-screen lg:h-screen overflow-hidden py-10 ${
         !location
           ? "bg-[url('assets/img/background.png')] bg-cover bg-no-repeat bg-top"
           : "bg-gray-900"
